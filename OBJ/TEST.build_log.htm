@@ -1,0 +1,132 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 11 wlamy, 11, LIC=HN0AE-5CX1C-KPBZY-I5T8N-E6BJN-L6QAP
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
+Toolchain Path:  D:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DCM.DLL V1.13.1.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.14.0_KEIL
+Dialog DLL:      TCM.DLL V1.14.4.0
+ 
+<h2>Project:</h2>
+D:\BaiduNetdiskDownload\can_read_current\USER\TEST.uvprojx
+Project File Date:  05/05/2023
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling startup_stm32f40_41xxx.s...
+compiling test.c...
+test.c(21): warning:  #177-D: variable "canbuf1" was declared but never referenced
+        u8 canbuf1[]={0x2B,0x02,0x64,0x00,0x10,0x00,0x00,0x00};//设置电机类型为EC-sin
+test.c(22): warning:  #177-D: variable "canbuf2" was declared but never referenced
+        u8 canbuf2[]={0x2B,0x10,0x64,0x01,0xF2,0x03,0x00,0x00};//设置额定电流最大1.01A   输入为1010   单位1mA
+test.c(23): warning:  #177-D: variable "canbuf3" was declared but never referenced
+        u8 canbuf3[]={0x2F,0x10,0x64,0x03,0x08,0x00,0x00,0x00};//设置电机的极对数8
+test.c(24): warning:  #177-D: variable "canbuf4" was declared but never referenced
+        u8 canbuf4[]={0x2B,0x10,0x64,0x05,0x73,0x00,0x00,0x00};//设置电机绕组热时间常数 11.5s     输入为115    单位100ms
+test.c(25): warning:  #177-D: variable "canbuf5" was declared but never referenced
+        u8 canbuf5[]={0x23,0x10,0x22,0x01,0x00,0x08,0x00,0x00};//设置编码器脉冲数2048
+test.c(26): warning:  #177-D: variable "canbuf6" was declared but never referenced
+        u8 canbuf6[]={0x23,0x10,0x22,0x02,0x02,0x00,0x00,0x00};//设置主从位置编码器,主编码器，辅未知。
+test.c(27): warning:  #177-D: variable "canbuf7" was declared but never referenced
+        u8 canbuf7[]={0x2B,0xF6,0x60,0x01,0x14,0x06,0x00,0x00};//设置电流环Kp  三环的PID参数的范围都在0-32767
+test.c(28): warning:  #177-D: variable "canbuf8" was declared but never referenced
+        u8 canbuf8[]={0x2B,0xF6,0x60,0x02,0x6D,0x01,0x00,0x00};//设置电流环Ki
+test.c(29): warning:  #177-D: variable "canbuf9" was declared but never referenced
+        u8 canbuf9[]={0x2B,0xF9,0x60,0x01,0x16,0x04,0x00,0x00};//设置速度环Kp
+test.c(30): warning:  #177-D: variable "canbuf10" was declared but never referenced
+        u8 canbuf10[]={0x2B,0xF9,0x60,0x02,0x76,0x00,0x00,0x00};//设置速度环Ki
+test.c(31): warning:  #177-D: variable "canbuf11" was declared but never referenced
+        u8 canbuf11[]={0x2B,0xFB,0x60,0x01,0xB2,0x00,0x00,0x00};//设置位置环Kp
+test.c(32): warning:  #177-D: variable "canbuf12" was declared but never referenced
+        u8 canbuf12[]={0x2B,0xFB,0x60,0x02,0x7E,0x01,0x00,0x00};//设置位置环Ki
+test.c(33): warning:  #177-D: variable "canbuf13" was declared but never referenced
+        u8 canbuf13[]={0x2B,0xFB,0x60,0x03,0x98,0x01,0x00,0x00};//设置位置环Kd
+test.c(36): warning:  #177-D: variable "canbuf15" was declared but never referenced
+        u8 canbuf15[]={0x82,0x01};                                                                                                                      //重置通信   cob_id+cs指令+node_id   这里的cob_id好像是0x000，如果这样的话，需要重写write代码
+test.c(37): warning:  #177-D: variable "canbuf16" was declared but never referenced
+        u8 canbuf16[]={0x2B,0x40,0x60,0x00,0x06,0x00,0x00,0x00};//关闭通信，刷新电源，禁用驱动功能
+test.c(38): warning:  #177-D: variable "canbuf17" was declared but never referenced
+        u8 canbuf17[]={0x01,0x01};                                                                                                                      // 启动远程节点 
+test.c(41): warning:  #177-D: variable "canbuf21" was declared but never referenced
+        u8 canbuf21[]={0x2B,0x7F,0x60,0x00,0x72,0x0B,0x00,0x00};//最大速度2930
+test.c(42): warning:  #177-D: variable "canbuf22" was declared but never referenced
+        u8 canbuf22[]={0x2B,0xC5,0x60,0x00,0x07,0xD0,0x00,0x00};//最大加速度2000
+test.c(46): warning:  #177-D: variable "canbuf26" was declared but never referenced
+        u8 canbuf26[]={0x2B,0x40,0x60,0x00,0x0F,0x00,0x00,0x00};//打开、使能装置
+test.c(47): warning:  #177-D: variable "canbuf27" was declared but never referenced
+        u8 canbuf27[]={0x23,0x6B,0x20,0x00,0x00,0x00,0x00,0x00};//设置目标速度0rpm 
+test.c(48): warning:  #177-D: variable "canbuf28" was declared but never referenced
+        u8 canbuf28[]={0x40,0x28,0x20,0x00,0x00,0x00,0x00,0x00};//读取速度值0x606C，速度平均值0x2028
+test.c(51): warning:  #177-D: variable "canbuf31" was declared but never referenced
+        u8 canbuf31[]={0x2B,0x10,0x64,0x01,0xF2,0x03,0x00,0x00};//设置电机额定电流最大1.01A   输入为1010   单位1mA
+test.c(52): warning:  #177-D: variable "canbuf32" was declared but never referenced
+        u8 canbuf32[]={0x23,0x10,0x64,0x04,0x72,0x0B,0x00,0x00};//最大电机速度2930rpm
+test.c(53): warning:  #177-D: variable "canbuf33" was declared but never referenced
+        u8 canbuf33[]={0x2B,0x10,0x64,0x05,0x73,0x00,0x00,0x00};//设置电机绕组热时间常数 11.5s     输入为115    单位100ms
+test.c(54): warning:  #177-D: variable "canbuf34" was declared but never referenced
+        u8 canbuf34[]={0x2B,0x40,0x60,0x00,0x06,0x00,0x00,0x00};//关闭电机
+test.c(55): warning:  #177-D: variable "canbuf35" was declared but never referenced
+        u8 canbuf35[]={0x2B,0x40,0x60,0x00,0x0F,0x00,0x00,0x00};//打开、使能装置
+test.c(57): warning:  #177-D: variable "canbuf37" was declared but never referenced
+        u8 canbuf37[]={0x2B,0x40,0x60,0x00,0x0F,0x00,0x00,0x00};//打开、使能装置
+test.c(58): warning:  #177-D: variable "canbuf38" was declared but never referenced
+        u8 canbuf38[]={0x2B,0x30,0x20,0x00,0x00,0x00,0x00,0x00};//设置目标电流0mA 
+test.c(62): warning:  #177-D: variable "canbuf41" was declared but never referenced
+        u8 canbuf41[]={0x23,0x65,0x60,0x00,0x20,0x4e,0x00,0x00};//设置最大跟踪误差20000qc(默认值)   一圈为2048*4qc  可以理解为2000个脉冲信号，
+test.c(63): warning:  #177-D: variable "canbuf42" was declared but never referenced
+        u8 canbuf42[]={0x23,0x7D,0x60,0x01,0x00,0x00,0x00,0x80};//最小位置-2147483648(默认值)
+test.c(64): warning:  #177-D: variable "canbuf43" was declared but never referenced
+        u8 canbuf43[]={0x23,0x7D,0x60,0x02,0xFF,0xFF,0xFF,0x7F};//最大位置2147483647(默认值)
+test.c(65): warning:  #177-D: variable "canbuf44" was declared but never referenced
+        u8 canbuf44[]={0x2B,0x7F,0x60,0x00,0x72,0x0B,0x00,0x00};//最大电机速度2930rpm
+test.c(66): warning:  #177-D: variable "canbuf45" was declared but never referenced
+        u8 canbuf45[]={0x2B,0xC5,0x60,0x00,0xFF,0xFF,0xFF,0xFF};//最大加速度4294967295
+test.c(67): warning:  #177-D: variable "canbuf46" was declared but never referenced
+        u8 canbuf46[]={0x2B,0x40,0x60,0x00,0x06,0x00,0x00,0x00};//关闭电机
+test.c(68): warning:  #177-D: variable "canbuf47" was declared but never referenced
+        u8 canbuf47[]={0x2B,0x40,0x60,0x00,0x0F,0x00,0x00,0x00};//打开、使能装置
+test.c(70): warning:  #177-D: variable "canbuf49" was declared but never referenced
+        u8 canbuf49[]={0x2B,0x40,0x60,0x00,0x0F,0x00,0x00,0x00};//打开、使能装置
+test.c(71): warning:  #177-D: variable "canbuf50" was declared but never referenced
+        u8 canbuf50[]={0x2B,0x40,0x60,0x00,0x00,0x00,0x00,0x00};//关闭、停止电机 
+test.c(72): warning:  #177-D: variable "canbuf51" was declared but never referenced
+        u8 canbuf51[]={0x40,0x64,0x60,0x00,0x00,0x00,0x00,0x00};//读取位置值
+test.c(79): warning:  #177-D: variable "canbuf_V" was declared but never referenced
+        u8 canbuf_V[8];//速度返回数据
+test.c: 39 warnings, 0 errors
+compiling delay.c...
+compiling sys.c...
+compiling usart.c...
+compiling led.c...
+compiling ILI93xx.c...
+compiling key.c...
+compiling can.c...
+compiling usmart.c...
+compiling usmart_config.c...
+compiling usmart_str.c...
+linking...
+Program Size: Code=10186 RO-data=666 RW-data=336 ZI-data=1320  
+FromELF: creating hex file...
+"..\OBJ\TEST.axf" - 0 Error(s), 39 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  D:\BaiduNetdiskDownload\can_read_current\USER\RTE
+  D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0
+
+<h2>Collection of Component Files used:</h2>
+</pre>
+</body>
+</html>
